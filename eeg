@@ -1,23 +1,11 @@
-from validation import validate
-import os
+from interface import DatasetValidatorGUI
+
 def main():
     """
-    Main function to take input from the user and validate the dataset.
+    Main function to launch the GUI interface.
     """
-    # Ask the user for the dataset path
-    dataset_path = input("Enter the path to your dataset: ").strip()
-
-    if not os.path.isdir(dataset_path):
-        print("The provided path is not a valid directory.")
-        return
-
-    print("Validating the dataset...")
-    is_valid = validate(dataset_path)
-
-    if is_valid:
-        print("The dataset passed the validation!")
-    else:
-        print("The dataset failed validation. Please fix the issues and try again.")
+    app = DatasetValidatorGUI()
+    app.run()
 
 if __name__ == "__main__":
     main()
